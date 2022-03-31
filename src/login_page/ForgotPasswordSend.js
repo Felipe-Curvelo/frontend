@@ -20,9 +20,12 @@ const ForgotPassword = () => {
     const toast = useToast();
     const [email, setEmail ] = useState("");
     const navigate = useNavigate();
+    const [loadingText, setLoadingText ] = useState({ buttonText: 'Resetar Senha'});
+    const { buttonText } = loadingText;
 
     
   const handleReset = (e) => {
+    setLoadingText({ buttonText: 'Enviando...'})
     e.preventDefault()
     const options = {
       url: `${process.env.REACT_APP_BASE_URL}/reset_password`,
@@ -40,11 +43,12 @@ const ForgotPassword = () => {
         setEmail('')
         toast({
           title: 'Email Enviado!',
-          description: response.data.message,
+          description: 'Veja sua caixa de entrada ou o lixo eletrônico para ter acesso ao link de reset',
           status: 'success',
           duration: 9000,
           isClosable: true,
         });
+        setLoadingText({ buttonText: 'Resetar Senha'})
         navigate("/")
       })
       .catch(error => {
@@ -92,6 +96,7 @@ const ForgotPassword = () => {
             />
           </FormControl>
           <Stack spacing={6}>
+          {buttonText === "Resetar Senha"  ?
             <Button
             onClick={handleReset}
               bg={'blue.400'}
@@ -99,8 +104,19 @@ const ForgotPassword = () => {
               _hover={{
                 bg: 'blue.500',
               }}>
-              Resetar Senha
+              {buttonText}
+            </Button>:
+            <Button
+              bg={'blue.400'}
+              color={'white'}
+              _hover={{
+                bg: 'blue.500',
+              }}
+              isDisabled
+              >
+              {buttonText}
             </Button>
+          }
           </Stack>
         </Stack>
       </Flex>
