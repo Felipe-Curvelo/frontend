@@ -37,7 +37,7 @@ import { AuthContext } from '../contexts/auth';
                 
               </Heading>
               <Text color={'gray.500'} fontSize={{ base: 'sm', sm: 'md' }}>
-              Bem vindo! Esta é uma versão de demosntração do aplicativo, por favor, tenha isso em mente. Desde já, muito obrigado por participar!
+              Bem vindo! Esta é uma versão de demonstração do aplicativo, por favor, tenha isso em mente. Desde já, muito obrigado por participar!
             </Text>
             </Stack>
             <Stack
@@ -60,7 +60,7 @@ import { AuthContext } from '../contexts/auth';
                   </Text>
                 </Heading>
                 <Text color={'gray.500'} fontSize={{ base: 'sm', sm: 'md' }}>
-                  Tenha acesso ao melhor aplicativo de gestão de portfólio, faça seu cadastro ou entre com as suas credenciais para acessar
+                  Tenha acesso ao aplicativo de gestão de portfólio, faça seu cadastro ou entre com as suas credenciais para acessar
                 </Text>
               </Stack>
               <Box as={'form'} mt={10}>
