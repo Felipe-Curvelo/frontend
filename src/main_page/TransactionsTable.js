@@ -58,7 +58,7 @@ export default function TransactionsTable() {
               <Th>Criptomoeda</Th>
               <Th>Tipo de Transação</Th>
               <Th>Valor</Th>
-              <Th>Preço da Moeda na Transação</Th>
+              <Th>Preço de compra</Th>
               <Th>Qtd de Criptomoedas</Th>
               <Th>Data da Transação</Th>
               <Th>Lucro / Prejuízo</Th>

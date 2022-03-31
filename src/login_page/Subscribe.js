@@ -30,10 +30,13 @@ import {
     const [email2, setEmail2 ] = useState("");
     const [password1, setPassword1 ] = useState("");
     const [password2, setPassword2 ] = useState("");
+    const [loadingText, setLoadingText ] = useState({ buttonText: 'Criar Conta'});
+    const { buttonText } = loadingText;
     const toast = useToast();
     const navigate = useNavigate();
 
     const createNewAccount = () => {
+      setLoadingText({ buttonText: 'Enviando...'})
       const options = {
           url: `${process.env.REACT_APP_BASE_URL}/sign-up`,
           method: 'POST',
@@ -65,6 +68,7 @@ import {
           duration: 9000,
           isClosable: true,
         });
+        setLoadingText({ buttonText: 'Criar Conta'})
         navigate("/")
       })
       .catch(error => {
@@ -76,6 +80,7 @@ import {
           duration: 9000,
           isClosable: true,
         });
+        setLoadingText({ buttonText: 'Criar Conta'})
       })
   };
 
@@ -175,18 +180,31 @@ import {
                 </InputGroup>
               </FormControl>
               <Stack spacing={10} pt={2}>
-                <Button
-                  loadingText="Submitting"
-                  size="lg"
-                  bg={'blue.400'}
-                  color={'white'}
-                  _hover={{
-                    bg: 'blue.500',
-                  }}
-                  onClick={createNewAccount}
+                {buttonText === "Criar Conta"  ?
+                  <Button
+                    size="lg"
+                    bg={'blue.400'}
+                    color={'white'}
+                    _hover={{
+                      bg: 'blue.500',
+                    }}
+                    onClick={createNewAccount}
                   >
-                  Criar Conta
-                </Button>
+                  {buttonText}
+                  </Button> :
+                  <Button
+                    size="lg"
+                    bg={'blue.400'}
+                    color={'white'}
+                    _hover={{
+                      bg: 'blue.500',
+                    }}
+                    isDisabled
+                    onClick={createNewAccount}
+                    >
+                    {buttonText}
+                    </Button>
+                }                
               </Stack>
               <Stack pt={6}>
                 <Text align={'center'}>

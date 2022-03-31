@@ -77,8 +77,10 @@ const Home = () => {
     };
 
     const loadTransactions = async () => {
+        setLoading(true)
         const response = await getTransactions();
         setTransactions(response.data)
+        setLoading(false)
     }
 
     useEffect(() =>{

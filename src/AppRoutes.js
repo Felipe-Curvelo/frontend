@@ -14,7 +14,6 @@ import Subscribe from "./login_page/Subscribe";
 import TransactionsTable from "./main_page/TransactionsTable";
 import { AuthProvider, AuthContext } from './contexts/auth';
 
-import ListTest from "./main_page/ListTest"
 
 const AppRoutes = () => {
     const Private = ({ children }) => {
@@ -41,7 +40,6 @@ const AppRoutes = () => {
                     <Route exact path ="/signup" element={<Subscribe />} />
                     <Route exact path ="/" element={<Private><Home /></Private>} />
                     <Route exact path ="/transactions" element={<Private><TransactionsTable /></Private>} />
-                    <Route exact path ="/test" element={<ListTest />} />
                 </Routes>
             </AuthProvider>
         </Router>

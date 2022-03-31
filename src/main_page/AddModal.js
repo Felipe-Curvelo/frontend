@@ -129,10 +129,10 @@ export default function AddModal({ isOpen, onClose, setLoadingError }) {
                                     placeholder="Total da venda (EM DÓLARES)"
                                 />
                             }
-                            <FormHelperText >Sempre utilize pontos para separar casas decimais (Exemplo: 25.58)</FormHelperText>
+                            <FormHelperText >Utilize pontos para separar casas decimais (Exemplo: 25.58)</FormHelperText>
                         </FormControl>
                         <FormControl as='fieldset' isRequired>
-                                <FormLabel as='legend' style={{fontWeight: "bold"}}>Preço:</FormLabel>
+                                <FormLabel as='legend' style={{fontWeight: "bold"}}>Preço de compra:</FormLabel>
                                 {type === '1' ?
                                     <Input
                                         value={pricePurchasedAt}
@@ -140,22 +140,22 @@ export default function AddModal({ isOpen, onClose, setLoadingError }) {
                                         placeholder="Preço da criptomoeda (EM DÓLARES)"
                                     /> :
                                     <Input
-                                        value={pricePurchasedAt}
+                                        value=""
                                         onChange={(e) => setPricePurchasedAt(e.target.value)}
                                         placeholder="Campo calculado automaticamente."
                                         isDisabled
                                     />
                                 }
-                            <FormHelperText >Sempre utilize pontos para separar casas decimais (Exemplo: 25.58)</FormHelperText>
+                            <FormHelperText >Utilize pontos para separar casas decimais (Exemplo: 25.58)</FormHelperText>
                         </FormControl>
                         <FormControl as='fieldset' isRequired>
                             <FormLabel as='legend' style={{fontWeight: "bold"}}>Quantidade de criptomoedas:</FormLabel>
                             <Input
                             value={numberOfCoins}
                             onChange={(e) => setNumberOfCoins(e.target.value)}
-                            placeholder="Quantidade de Moedas"
+                            placeholder="Quantidade de criptomoedas"
                             />
-                            <FormHelperText >Sempre utilize pontos para separar casas decimais (Exemplo: 0.008)</FormHelperText>
+                            <FormHelperText >Utilize pontos para separar casas decimais (Exemplo: 0.008)</FormHelperText>
                         </FormControl>
                         <Box>
                             <RadioGroup 

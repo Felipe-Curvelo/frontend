@@ -52,20 +52,20 @@ export default function ListTable({ rollups }) {
 
       >
         <Thead 
-        spacingY={3}
+        spacingy={3}
         columns={{ base: 1, md: 3 }}
         textTransform="uppercase"
         bg={bg2}
         color={"gray.500"}
         py={{ base: 1, md: 4 }}
         px={{ base: 2, md: 10 }}
-        fontSize="md"
+      
         fontWeight="hairline"
         >
           <Tr>
             <Th></Th>  
             <Th>Criptomoeda</Th>
-            <Th></Th> 
+            <Th>Símbolo</Th> 
             <Th>Preço Atual</Th>
             <Th>24h%</Th>
             <Th>Qtd de Moeda</Th>
@@ -78,15 +78,17 @@ export default function ListTable({ rollups }) {
           </Tr>
         </Thead>
         <Tbody
-            spacingY={3}
+            spacingy={3}
             columns={{ base: 1, md: 3 }}
             w="full"
             py={2}
             px={10}
+            fontSize="20px"
             fontWeight="hairline"
             textOverflow="ellipsis"
             overflow="hidden"
-            whiteSpace="nowrap"        
+            whiteSpace="nowrap"
+                   
         >
           {rollups.map((coin, index) => {
             return (
